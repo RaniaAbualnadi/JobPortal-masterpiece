@@ -19,8 +19,11 @@ namespace JobPortalWeb.Controllers
         // GET: CvJobs
         public ActionResult Index()
         {
-
             var userId = User.Identity.GetUserId();
+            if (!db.Profiles.Any(p => p.UserId == userId))
+            {
+                return RedirectToAction("Create", "Profiles", new { showMessage = true });
+            }
             var cvJobs = db.CvJobs.Include(c => c.Profile).Where(p=>p.Profile.UserId == userId);
             return View(cvJobs.ToList());
         }

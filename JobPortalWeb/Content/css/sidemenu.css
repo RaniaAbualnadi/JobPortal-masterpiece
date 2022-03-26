@@ -233,15 +233,13 @@ li.nav-menu-item span.icon {
 }
 
 .login-profile-info {
-    /* width: 20%; */
-    background-color: #373e46;
+    /* width: 20%; */ 
     border-radius: 5px;
     /*box-shadow: inset 0px 0px 3px 1px #454e70;*/
-    height: 1.5em;
+    
     display: flex;
     gap: 0.7em;
-    align-items: center;
-    height: 100%;
+    align-items: center; 
     padding-right: 2em;
     font-weight: bold;
     font-size: 1.1em;

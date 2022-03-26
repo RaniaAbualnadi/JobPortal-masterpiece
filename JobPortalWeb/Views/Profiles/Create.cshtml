@@ -4,9 +4,8 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Create</h2>
-
+ 
+<h4>@ViewBag.Message</h4>
 
 @using (Html.BeginForm()) 
 {
@@ -51,12 +50,12 @@
         <div class="form-field-container">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
             <div class="control-container">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "generic-control" , type="email" } })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "generic-control" , type="email" , disabled ="true"} })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-field-container">
+        <div class="form-field-container hidden">
             @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label" })
             <div class="control-container">
                 @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "generic-control" } })

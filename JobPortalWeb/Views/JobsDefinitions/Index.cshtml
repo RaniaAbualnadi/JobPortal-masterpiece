@@ -37,7 +37,7 @@
             </div>
             <div class="card-body">
                 <div class="job-description">
-                    <span style="font-weight:bold">Description:</span>   @Html.DisplayFor(modelItem => item.JobDescription)
+                    <span style="font-weight:bold">Description:</span>   @item.JobDescription.Substring(0, (item.JobDescription.Length >50 ? 50 : item.JobDescription.Length))<span>...</span>
                 </div>
                 <div class="Major">
                     <span style="font-weight:bold"> Major:</span> @Html.DisplayFor(modelItem => item.Major)
@@ -46,7 +46,7 @@
                     <span style="font-weight:bold">   Min years of experiance</span> @Html.DisplayFor(modelItem => item.MinYearsOfExperance)
                 </div>
                 <div class="job-req">
-                    <span style="font-weight:bold">Job Requirements:</span>  @Html.DisplayFor(modelItem => item.JobRequirement)
+                    <span style="font-weight:bold">Job Requirements:</span>     @item.JobRequirement.Substring(0, (item.JobRequirement.Length > 50 ? 50 : item.JobRequirement.Length))<span>...</span>
                 </div>
 
                 <div class="  action-button-container">

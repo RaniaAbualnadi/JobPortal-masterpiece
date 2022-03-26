@@ -39,17 +39,22 @@ namespace JobPortalWeb.Controllers
         }
 
         // GET: Profiles/Create
-        public ActionResult Create()
+        public ActionResult Create(bool showMessage = false)
         {
+            if (showMessage)
+            {
+                ViewBag.Message = "Please Create profile to continue";
+            }
             var userId = User.Identity.GetUserId();
             if (db.Profiles.Any(p => p.UserId == userId))
             {
                 return RedirectToAction("Edit", "Profiles");
             }
+            Profile profile = new Profile() { Email = User.Identity.GetUserName() };
 
             ViewBag.GenderId = new SelectList(db.Genders, "Id", "Value");
             ViewBag.NationalityId = new SelectList(db.Nationalities, "Id", "Value");
-            return View();
+            return View(profile);
         }
 
         // POST: Profiles/Create
@@ -57,7 +62,7 @@ namespace JobPortalWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FullName,Birthdate,GenderId,NationalityId,Email,UserId,MobileNumber,FullAddress,CoverLetter")] Profile profile)
+        public ActionResult Create([Bind(Include = "Id,FullName,Birthdate,GenderId,NationalityId,Email,UserId,MobileNumber,FullAddress,CoverLetter")] Profile profile, bool showMessage = false)
         {
             var userId = User.Identity.GetUserId();
             profile.UserId = userId;
@@ -78,6 +83,10 @@ namespace JobPortalWeb.Controllers
         public ActionResult Edit( )
         {
             var userId = User.Identity.GetUserId();
+            if (!db.Profiles.Any(p => p.UserId == userId))
+            {
+                return RedirectToAction("Create", "Profiles", new { showMessage = true });
+            }
             Profile profile = db.Profiles.Where(p=>p.UserId == userId).SingleOrDefault();
 
             if (profile == null)
@@ -112,6 +121,10 @@ namespace JobPortalWeb.Controllers
         public ActionResult CVViewer()
         {
             var userId = User.Identity.GetUserId();
+            if (!db.Profiles.Any(p => p.UserId == userId))
+            {
+                return RedirectToAction("Create", "Profiles", new { showMessage =true});
+            } 
             var profileInfo = db.Profiles.Where(p => p.UserId == userId).Include("CvJobs").Include("CVEducations").Include("CVSkills").FirstOrDefault();
             return View(profileInfo);
         }

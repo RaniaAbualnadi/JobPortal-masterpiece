@@ -20,6 +20,10 @@ namespace JobPortalWeb.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
+            if (!db.Profiles.Any(p => p.UserId == userId))
+            {
+                return RedirectToAction("Create", "Profiles", new { showMessage = true });
+            }
             var jobApplications = db.JobApplications.Include(j => j.JobsDefinition).Include(j => j.Profile).Where(p => p.Profile.UserId == userId);
             return View(jobApplications.ToList());
         }

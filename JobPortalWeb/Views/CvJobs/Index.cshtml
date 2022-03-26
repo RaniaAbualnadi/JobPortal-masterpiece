@@ -17,10 +17,10 @@
         <th>
             @Html.DisplayNameFor(model => model.JobDescription)
         </th>
-        <th>
+        <th class="hide-small">
             @Html.DisplayNameFor(model => model.StartDate)
         </th>
-        <th>
+        <th class="hide-small">
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
      
@@ -36,10 +36,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.JobDescription)
             </td>
-            <td>
+            <td class="hide-small">
                 @item.StartDate.ToShortDateString()
             </td>
-            <td>
+            <td class="hide-small">
                 @(item.EndDate.HasValue? item.EndDate.Value.ToShortDateString():"" )
             </td>
            

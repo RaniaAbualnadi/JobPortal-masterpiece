@@ -51,7 +51,7 @@
         <div class="form-field-container">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
             <div class="control-container">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "generic-control" , disabled = "true" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
