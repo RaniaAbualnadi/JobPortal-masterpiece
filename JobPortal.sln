@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortalWeb", "JobPortalWeb\JobPortalWeb.csproj", "{34C4ADE2-84B6-470B-A23D-8E18D1D82DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal.Admin", "JobPortal.Admin\JobPortal.Admin.csproj", "{529A40B4-3A27-4485-B881-FD362F47B552}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34C4ADE2-84B6-470B-A23D-8E18D1D82DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C4ADE2-84B6-470B-A23D-8E18D1D82DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C4ADE2-84B6-470B-A23D-8E18D1D82DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C4ADE2-84B6-470B-A23D-8E18D1D82DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529A40B4-3A27-4485-B881-FD362F47B552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529A40B4-3A27-4485-B881-FD362F47B552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529A40B4-3A27-4485-B881-FD362F47B552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529A40B4-3A27-4485-B881-FD362F47B552}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5443EC15-F573-41C3-AC5D-FA67C44EDF0E}
+	EndGlobalSection
+EndGlobal

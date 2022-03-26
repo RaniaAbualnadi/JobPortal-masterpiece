@@ -1,0 +1,280 @@
+﻿@model IEnumerable<JobPortalWeb.Data.JobsDefinition>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<section class="first-section">
+    <div class="mainpage-container">
+        <div class="sub-container">
+            <h1>Searching for Job</h1>
+            <h2>
+                Our target to find the correct job to the correct person
+            </h2>
+            @using (Html.BeginForm("index", "JobsDefinitions"))
+            {
+                <div class="searchjob-container">
+
+                    <input type="text" class="search-input" name="SearchPhrase" id="SearchPhrase">
+                    <button class="btn-search"> <i class="fas fa-search"></i> Search Jobs</button>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="section-job-categroies">
+
+    <div class="cv-banner">
+        <div class="banenr-description">Create or add your resume to find your job</div>
+        <a href="~/Profiles/create">
+            <div class="banner-button"><i class="fas fa-file-import"></i>Create Resume</div>
+        </a>
+    </div>
+</section>
+<section class="section-jobs-list">
+
+    <div class="section-title"><h2>Jobs Listing</h2>    </div>
+    @*<div class="jobs-tabs-container">
+            <div class="job-tab">New Jobs</div>
+            <div class="job-tab">Most Visited</div>
+            <div class="job-tab">Most Applied</div>
+        </div>*@
+    <div class="job-list-container">
+        
+        @foreach (var item in Model)
+        {
+
+       
+        <div class="job-card">
+            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="card-title">@item.JobTitle</div>
+            <div class="card-department">
+                 
+            </div>
+            <div class="card-info">
+                <div class="card-job-level"><i class="fas fa-layer-group"></i>@item.Degree.Value</div>
+                <div class="card-job-experiance"><i class="fas fa-calendar-week"></i>@item.MinYearsOfExperance years</div>
+                <div class="type"><i class="fas fa-stopwatch"></i>Full Time</div>
+            </div>
+            <div class="card-footer">
+                <div class="card-buttons">
+                    <a href="~/JobsDefinitions/ApplyToJob?id=@item.Id" class="btn-default btn-add"><b><i class="fas fa-paper-plane"></i></b> Apply To Job</a>
+
+                </div>
+            </div>
+        </div>
+        }
+        @*<div class="job-card">
+            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="card-title">Job title</div>
+            <div class="card-department">
+                HR
+            </div>
+            <div class="card-info">
+                <div class="card-job-level"><i class="fas fa-layer-group"></i>Mid Level</div>
+                <div class="card-job-experiance"><i class="fas fa-calendar-week"></i>5 years</div>
+                <div class="type"><i class="fas fa-stopwatch"></i>Full Time</div>
+            </div>
+            <div class="card-footer">
+                <div class="card-buttons">
+                    <div class="card-apply"><i class="fas fa-user-check"></i>Apply</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="job-card">
+            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="card-title">Job title</div>
+            <div class="card-department">
+                HR
+            </div>
+            <div class="card-info">
+                <div class="card-job-level"><i class="fas fa-layer-group"></i>Mid Level</div>
+                <div class="card-job-experiance"><i class="fas fa-calendar-week"></i>5 years</div>
+                <div class="type"><i class="fas fa-stopwatch"></i>Full Time</div>
+            </div>
+            <div class="card-footer">
+                <div class="card-buttons">
+                    <div class="card-apply"><i class="fas fa-user-check"></i>Apply</div>
+
+                </div>
+            </div>
+        </div>*@
+    </div>
+</section>
+
+<section class="section-steps">
+    <div class="steps-container">
+        <div class="step-div">
+            <div class="step-icon">
+                <i class="fas fa-user"> </i>
+            </div>
+            <div class="step-number">Step 1</div>
+            <div class="step-title">REGISTER ACCOUNT</div>
+            <div class="step-description">
+                Register and join our members now.
+
+            </div>
+        </div>
+
+        <div class="step-div">
+            <div class="step-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="step-number">Step 2</div>
+            <div class="step-title">SEARCH FOR JOB</div>
+            <div class="step-description">
+                Search for a job in an easy-to-deal portal.
+
+            </div>
+        </div>
+        <div class="step-div">
+            <div class="step-icon">
+                <i class="far fa-paper-plane"></i>
+            </div>
+            <div class="step-number">Step 3</div>
+            <div class="step-title">Create YOUR RESUME</div>
+            <div class="step-description">
+                Create your resume using simple steps.
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-news">
+    <div class="news-container">
+        <h2>Latest articles and updates</h2>
+        <!-- card start -->
+        <div class="news-card">
+            <div class="news-img-container">
+                <div class="news-img"></div>
+            </div>
+            <div class="news-card-body">
+                <div class="news-card-title">Title of the news</div>
+                <div class="news-card-details">
+
+                    <div class="news-detials-sub">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Created on : <span>12-12-2021</span></p>
+                    </div>
+                    <div class="news-detials-sub">
+                        <i class="fas fa-eye"></i>
+                        <p>Seen : <span>122</span></p>
+                    </div>
+                </div>
+                <div class="news-goto">
+                    <i class="fas fa-angle-double-right"></i>
+                </div>
+            </div>
+        </div>
+        <!-- card end -->
+        <!-- card start -->
+        <div class="news-card">
+            <div class="news-img-container">
+                <div class="news-img"></div>
+            </div>
+            <div class="news-card-body">
+                <div class="news-card-title">Title of the news</div>
+                <div class="news-card-details">
+
+                    <div class="news-detials-sub">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Created on : <span>12-12-2021</span></p>
+                    </div>
+                    <div class="news-detials-sub">
+                        <i class="fas fa-eye"></i>
+                        <p>Seen : <span>122</span></p>
+                    </div>
+                </div>
+                <div class="news-goto">
+                    <i class="fas fa-angle-double-right"></i>
+                </div>
+            </div>
+        </div>
+        <!-- card end -->
+        <!-- card start -->
+        <div class="news-card">
+            <div class="news-img-container">
+                <div class="news-img"></div>
+            </div>
+            <div class="news-card-body">
+                <div class="news-card-title">Title of the news</div>
+                <div class="news-card-details">
+
+                    <div class="news-detials-sub">
+                        <i class="fas fa-calendar-alt"></i>
+                        <p>Created on : <span>12-12-2021</span></p>
+                    </div>
+                    <div class="news-detials-sub">
+                        <i class="fas fa-eye"></i>
+                        <p>Seen : <span>122</span></p>
+                    </div>
+                </div>
+                <div class="news-goto">
+                    <i class="fas fa-angle-double-right"></i>
+                </div>
+            </div>
+        </div>
+        <!-- card end -->
+    </div>
+</section>
+<section class="section-testemonial">
+
+    <div class="testemonial-Container">
+        <!-- card start -->
+        <div class="testemonial-Card">
+            <div class="testemonial-header">
+            </div>
+            <div class="testemonial-body">
+                <img src="~/Content/images/home/profile.jfif">
+                @*<div class="testemonial-quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>*@
+                <div class="testemonial-content">
+                    “I just wanted to share a quick note and let you know that you guys do a
+                    really good job. It’s really great how easy your websites are to deal with
+                    and manage. I never have any problem at all.”
+
+                </div>
+
+                <i>-- Ahmad</i>
+            </div>
+        </div>
+        <!-- card start -->
+        <div class="testemonial-Card">
+            <div class="testemonial-header">
+            </div>
+            <div class="testemonial-body">
+                <img src="~/Content/images/home/profile2.png">
+                @*<div class="testemonial-quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>*@
+                <div class="testemonial-content">
+                    “Now it’s almost like having a great CV right here with me. I just put the
+                    information, make the change and click save. It’s so simple. Thanks, guys!”
+
+                </div>
+
+                <i>-- Jack</i>
+            </div>
+        </div>
+        <!-- card start -->
+        <div class="testemonial-Card">
+            <div class="testemonial-header">
+            </div>
+            <div class="testemonial-body">
+                <img src="~/Content/images/home/profile3.png">
+                @*<div class="testemonial-quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>*@
+                <div class="testemonial-content">
+                    “Wow. I just updated my CV and it was SO SIMPLE. I am blown away. You guys
+                    truly amazing. Thanks for being so awesome.”
+                </div>
+
+                <i>-- Mohammed</i>
+            </div>
+        </div>
+
+    </div>
+</section>

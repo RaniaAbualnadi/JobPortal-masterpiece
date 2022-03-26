@@ -1,0 +1,183 @@
+﻿@model JobPortalWeb.Data.Profile
+@{
+    ViewBag.Title = "CV Viewer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="s-personal-information">
+    <div class="cv-section-title">
+        Personal Information
+    </div>
+    <div class="cv-info-container">
+
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Name:
+            </div>
+            <div class="cv-subinformation">
+                @Model.FullName
+            </div>
+        </div>
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Email:
+            </div>
+            <div class="cv-subinformation">
+                @Model.Email
+            </div>
+        </div>
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Phone Number:
+            </div>
+            <div class="cv-subinformation">
+                @Model.MobileNumber
+            </div>
+        </div>
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Gender:
+            </div>
+            <div class="cv-subinformation">
+                @if (Model.Gender != null)
+                {
+                    @Model.Gender.Value
+                }
+            </div>
+        </div>
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Nationality:
+            </div>
+            <div class="cv-subinformation">
+                @if (@Model.Nationality != null)
+                {
+                    @Model.Nationality.Value
+                }
+            </div>
+        </div>
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Cover Letter:
+            </div>
+            <div class="cv-subinformation">
+                @Model.CoverLetter
+            </div>
+        </div>
+    </div>
+</section>
+<section class="s-cv-jobs">
+    <div class="cv-section-title">
+        Jobs and Experiances
+    </div>
+    <div class="cv-info-container">
+        @foreach (var item in Model.CvJobs)
+        {
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Company Name:
+                </div>
+                <div class="cv-subinformation">
+                    @item.JobDescription
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Work Date:
+                </div>
+                <div class="cv-subinformation">
+                    @item.StartDate.ToShortDateString() - @(item.EndDate.HasValue? item.EndDate.Value.ToShortDateString(): "Until Now")
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Job Title
+                </div>
+                <div class="cv-subinformation">
+                    @item.JobTitle
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Responsibilities
+                </div>
+                <div class="cv-subinformation">
+                    @item.jobResponsibilities
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<section class="s-cv-education">
+    <div class="cv-section-title">
+        Education
+    </div>
+    <div class="cv-info-container">
+        @foreach (var item in Model.CVEducations)
+        {
+
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Institute:
+                </div>
+                <div class="cv-subinformation">
+                    @item.Institute
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Major:
+                </div>
+                <div class="cv-subinformation">
+                    @item.MajorId
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Degree:
+                </div>
+                <div class="cv-subinformation">
+                    @if (@item.Degree != null)
+                    {
+                        @item.Degree.Value
+                    }
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    Period:
+                </div>
+                <div class="cv-subinformation">
+                    @item.StartDate.ToShortDateString() - @(item.EndDate.HasValue ? item.EndDate.Value.ToShortDateString(): "Until Now" )
+                </div>
+            </div>
+            <div class="cv-row">
+                <div class="cv-subtitle">
+                    GPA:
+                </div>
+                <div class="cv-subinformation">
+                    @item.GPA
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<section class="s-cv-skilles">
+    <div class="cv-section-title">
+        Skills
+    </div>
+    <div class="cv-info-container">
+        <div class="cv-row">
+            <div class="cv-subtitle">
+                Skill List
+            </div>
+            <div class="cv-subinformation">
+                @foreach (var item in Model.CVSkills)
+                {
+                    <div> @item.Skilles</div>
+                }
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<JobPortalWeb.Data.CVSkill>
+
+@{
+    ViewBag.Title = "My Skills ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" col-md-12 action-button-container">
+    <a href="~/Profiles/CVViewer" class="btn-default btn-save"><b><i class="fas fa-arrow-circle-right"></i></b> View Cv </a>
+    <a href="~/CVSkills/Create" class="btn-default btn-add"><b><i class="fas fa-plus"></i></b> Create New  </a>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Skilles)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Skilles)
+    </td>
+
+    <td>
+        <a href="~/CVSkills/edit?id=@item.Id">
+            <i class="fas fa-edit"></i>
+        </a>
+        &nbsp;|
+        &nbsp;
+        <a href="~/CVSkills/Delete?id=@item.Id">
+            <i class="fas fa-trash"></i>
+        </a>
+    </td>
+</tr>
+}
+
+</table>

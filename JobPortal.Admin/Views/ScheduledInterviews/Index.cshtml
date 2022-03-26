@@ -1,0 +1,71 @@
+﻿@model IEnumerable<JobPortal.Admin.Data.ScheduledInterview>
+
+@{
+    ViewBag.Title = "Scheduled Interviews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<div class="row">
+    <div class=" col-md-12 action-button-container">
+        <a href="~/ScheduledInterviews/Create" class="btn btn-success btn-labeled btn-labeled-left btn-sm"><b><i class="icon-plus2 "></i></b>Create New  </a>
+    </div>
+</div>
+<table class="table">
+    <tr class="bg-primary text-white">
+        
+        <th>
+            @Html.DisplayNameFor(model => model.InterviewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAttended)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPassed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+      
+  
+        <th>
+            @Html.DisplayNameFor(model => model.InterviewType.Value)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+ 
+    <td>
+        @Html.DisplayFor(modelItem => item.InterviewDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsAttended)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsPassed)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Score)
+    </td>
+ 
+ 
+    <td>
+        @Html.DisplayFor(modelItem => item.InterviewType.Value)
+    </td>
+  
+    <td>
+        <a href="~/ScheduledInterviews/edit?id=@item.Id">
+            <i class="icon-pencil"></i>
+        </a>
+        @*&nbsp;|
+        &nbsp;
+        <a href="~/ScheduledInterviews/Delete?id=@item.Id">
+            <i class="icon-trash"></i>
+        </a>*@
+    </td>
+</tr>
+}
+
+</table>

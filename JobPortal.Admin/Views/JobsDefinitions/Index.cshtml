@@ -1,0 +1,62 @@
+﻿@model IEnumerable<JobPortal.Admin.Data.JobsDefinition>
+
+@{
+
+    ViewBag.Title = "Jobs Definitions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class=" col-md-12 action-button-container">
+        <a href="~/JobsDefinitions/Create" class="btn btn-success btn-labeled btn-labeled-left btn-sm"><b><i class="icon-plus2 "></i></b>Create New  </a>
+    </div>
+</div>
+
+<table class="table">
+    <tr class="bg-primary text-white">
+        <th>
+            Job Title
+          
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobDescription)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+
+            <td>
+                <a href="~/JobsDefinitions/edit?id=@item.Id">
+                    <i class="icon-pencil"></i>
+                </a>
+                &nbsp;|
+                &nbsp;
+                <a href="~/JobsDefinitions/Delete?id=@item.Id">
+                    <i class="icon-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

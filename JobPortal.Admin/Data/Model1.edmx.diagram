@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f719ddc62aee4ec6b292e18ef294501f" Name="Diagram1">
+        <EntityTypeShape EntityType="EmploymentGateModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.AspNetRole" Width="1.5" PointX="7.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.AspNetUserClaim" Width="1.5" PointX="12.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.AspNetUserLogin" Width="1.5" PointX="12.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.AspNetUser" Width="1.5" PointX="10" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.CVEducation" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.CvJob" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.CVSkill" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.Degree" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.EmailNotification" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.Gender" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.InterviewType" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.JobApplication" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.JobsDefinition" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.Nationality" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.Profile" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmploymentGateModel.ScheduledInterview" Width="1.5" PointX="10.5" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="EmploymentGateModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_CVEducation_Degree" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_CVEducation_Profile" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_CvJobs_Profile" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_CVSkills_Profile" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_JobsDefinition_Degree" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_Profile_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_ScheduledInterviews_InterviewType" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_JobApplications_JobsDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_JobApplications_Profile" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_ScheduledInterviews_JobApplications" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.FK_Profile_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="EmploymentGateModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

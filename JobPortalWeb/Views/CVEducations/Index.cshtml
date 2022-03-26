@@ -1,0 +1,58 @@
+﻿@model IEnumerable<JobPortalWeb.Data.CVEducation>
+
+@{
+    ViewBag.Title = "My Education";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+ 
+<div class=" col-md-12 action-button-container">
+    <a href="~/CVSkills/Index" class="btn-default btn-save"><b><i class="fas fa-arrow-circle-right"></i></b> Go to Skills  </a>
+    <a href="~/CVEducations/Create" class="btn-default btn-add"><b><i class="fas fa-plus"></i></b> Create New  </a>
+</div>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Institute)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MajorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPA)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Institute)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MajorId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GPA)
+    </td>
+
+    <td>
+        <a href="~/CVEducations/edit?id=@item.Id">
+            <i class="fas fa-edit"></i>
+        </a>
+        &nbsp;|
+        &nbsp;
+        <a href="~/CVEducations/Delete?id=@item.Id">
+            <i class="fas fa-trash"></i>
+        </a>
+    </td>
+</tr>
+    }
+
+</table>

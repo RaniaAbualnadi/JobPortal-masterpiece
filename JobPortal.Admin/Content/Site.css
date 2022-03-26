@@ -1,0 +1,110 @@
+﻿
+
+.action-button-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.8em;
+    padding: 0.8em;
+}
+
+.table {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.form-horizontal {
+    margin-top: 1em;
+    background-color: #ffffff;
+    border-radius: 8px;
+    color: black;
+}
+
+.form-control {
+    background-color: #85a6eb33;
+    color: black;
+}
+
+    .form-control:focus {
+        color: #fff;
+        background-color: #d1ddff;
+        border-color: #51a2db;
+        outline: 0;
+        color: black;
+    }
+
+     
+.row {
+    margin: 0.6em;
+}
+
+.page-subtitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    background-color: #21252a;
+    border-radius: 6px 6px 0px 0px;
+    color: white;
+}
+
+label.control-label {
+    font-weight: 500;
+    font-size: 01em;
+}
+
+tr > td:last-of-type {
+ width:12%;
+}
+
+
+dl.dl-horizontal {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 1em;
+    color: black;
+    border-radius: 0px 0px  0.5em 0.5em;
+}
+
+dt {
+    font-weight: 600;
+}
+
+.page-title {
+    padding: 0.25rem;
+    width: 100%;
+    background-color: #32333a;
+    margin: 1.2em;
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 4px 0px #dddddd63;
+}
+
+.navbar-right li {
+    padding: 6px;
+    padding-left: .8em;
+    font-size: 1em;
+    display: flex;
+    gap: .5em;
+    align-content: space-around;
+    align-items: center;
+    margin: .5em;
+    background-color: #268bd245;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px 0px #00bcd4, inset 0px 0px 5px 0px #00bcd4;
+    border-radius: 4px;
+    padding-right: 1em;
+}
+    .navbar-right li:hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 0px 0px #00bcd4, inset 0px 0px 3px 0px #00bcd4;
+    }
+
+
+
+.navbar-right a{
+    color:white;
+}

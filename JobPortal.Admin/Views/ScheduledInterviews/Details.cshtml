@@ -1,0 +1,91 @@
+﻿@model JobPortal.Admin.Data.ScheduledInterview
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ScheduledInterview</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvitationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvitationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterviewDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterviewDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAttended)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAttended)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPassed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPassed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArchivedForLater)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArchivedForLater)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterviewReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterviewReport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterviewType.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterviewType.Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobApplication.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobApplication.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

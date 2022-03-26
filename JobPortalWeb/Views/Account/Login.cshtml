@@ -1,0 +1,54 @@
+﻿@using JobPortalWeb.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+ 
+<section id="loginForm">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <img src="~/Content/images/jobportallogo.png"  class="login-logo"/>
+        
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="login-form-subcontainer">
+            <div class="login-input">
+                @Html.LabelFor(m => m.Email, new { @class = " control-label" })
+                
+                    @Html.TextBoxFor(m => m.Email, new { @class = "generic-control" })
+                    <i class="fas fa-at"></i>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+             
+            </div>
+            <div class="login-input">
+                @Html.LabelFor(m => m.Password, new { @class = " control-label" })
+                <div class="">
+                    @Html.PasswordFor(m => m.Password, new { @class = "generic-control" })
+                    <i class="fas fa-key"></i>
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-field-container">
+                <div>
+                    <div>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Log in" class="login-btn" />
+
+            
+        </div>
+
+         
+    }
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

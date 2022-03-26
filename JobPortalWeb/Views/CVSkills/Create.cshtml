@@ -1,0 +1,38 @@
+﻿@model JobPortalWeb.Data.CVSkill
+
+@{
+    ViewBag.Title = "Add Skill";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-container">
+     
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+
+        <div class="form-field-container">
+            @Html.LabelFor(model => model.Skilles, htmlAttributes: new { @class = "control-label" })
+            <div class="control-container">
+                @Html.EditorFor(model => model.Skilles, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.Skilles, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <div class="  action-button-container">
+            <button type="submit" class="btn-default btn-save">
+                <b><i class="fas fa-save"></i></b> Save
+            </button>
+            <a href="~/CvSkills/index" class="btn-default btn-back"><b><i class="fas fa-arrow-circle-left"></i></b> Back to List  </a>
+        </div>
+    </div>
+}
+ 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

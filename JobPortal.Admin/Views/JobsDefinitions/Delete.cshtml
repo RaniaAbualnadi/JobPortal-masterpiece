@@ -1,0 +1,148 @@
+﻿@model JobPortal.Admin.Data.JobsDefinition
+
+@{
+    ViewBag.Title = "Delete Job Definition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <div class="page-subtitle">Job Definition   </div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            
+                <label class="control-label ">
+                    Job Title
+                </label>
+          
+         
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+           
+                <label class="control-label ">
+                    Job Description
+                </label>
+         
+          
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+          
+                <label class="control-label ">
+                  Start Publish Date
+                </label>
+          
+         
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.StartPublishDate)
+        </dd>
+
+        <dt>
+            
+                <label class="control-label ">
+                  End Publish Date
+                </label>
+         
+           
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndPublishDate)
+        </dd>
+
+        <dt>
+           
+                <label class="control-label ">
+                 Major
+                </label>
+      
+           
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Major)
+        </dd>
+
+        <dt>
+          
+                <label class="control-label ">
+                  Min Years Of Experance
+                </label>
+         
+          
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinYearsOfExperance)
+        </dd>
+
+        <dt>
+            
+                <label class="control-label ">
+                   Job Requirement
+                </label>
+           
+         
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobRequirement)
+        </dd>
+
+        <dt>
+          
+                <label class="control-label ">
+                    Is Active
+                </label>
+           
+          
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+          
+                <label class="control-label ">
+                    Degree
+                </label>
+       
+          
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree.Value)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <hr />
+        <div class="form-group">
+            <div class=" col-md-12 action-button-container">
+                <button type="submit" class="btn btn-danger btn-labeled btn-labeled-left btn-sm"><b><i class="icon-trash"></i></b> Delete</button>
+                <a href="index" class="btn btn-teal btn-labeled btn-labeled-left btn-sm"><b><i class="icon-arrow-left52"></i></b> Back to List  </a>
+            </div>
+        </div>
+    }
+</div>

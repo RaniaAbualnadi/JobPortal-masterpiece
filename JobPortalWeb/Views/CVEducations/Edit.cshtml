@@ -1,0 +1,82 @@
+﻿@model JobPortalWeb.Data.CVEducation
+
+@{
+    ViewBag.Title = "Edit Education";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-container">
+     
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.UserProfileId)
+
+
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.EducationalDegreeId, "EducationalDegreeId", htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.DropDownList("EducationalDegreeId", null, htmlAttributes: new { @class = "generic-control" })
+            @Html.ValidationMessageFor(model => model.EducationalDegreeId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "generic-control" } })
+            @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "generic-control" } })
+            @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.MajorId, htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.EditorFor(model => model.MajorId, new { htmlAttributes = new { @class = "generic-control" } })
+            @Html.ValidationMessageFor(model => model.MajorId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.Institute, htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.EditorFor(model => model.Institute, new { htmlAttributes = new { @class = "generic-control" } })
+            @Html.ValidationMessageFor(model => model.Institute, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-field-container">
+        @Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label" })
+        <div class="control-container">
+            @Html.EditorFor(model => model.GPA, new { htmlAttributes = new { @class = "generic-control" } })
+            @Html.ValidationMessageFor(model => model.GPA, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+    <div class="  action-button-container">
+        <button type="submit" class="btn-default btn-save">
+            <b><i class="fas fa-save"></i></b> Save
+        </button>
+        <a href="~/CvEducations/index" class="btn-default btn-back"><b><i class="fas fa-arrow-circle-left"></i></b> Back to List  </a>
+    </div>
+</div>
+}
+
+ 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

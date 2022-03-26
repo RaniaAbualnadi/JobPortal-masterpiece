@@ -1,0 +1,74 @@
+﻿@model JobPortalWeb.Data.JobsDefinition
+
+@{
+    ViewBag.Title = "Job Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+<div>
+
+    <div class="page-subtitle"> Job Post Details</div>
+    <div class="form-container-details">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobDescription)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Major)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Major)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MinYearsOfExperance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MinYearsOfExperance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobRequirement)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobRequirement)
+            </dd>
+
+
+
+            <dt>
+                Degree
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Degree.Value)
+            </dd>
+
+        </dl>
+        <hr />
+        <div class="  action-button-container">
+
+            <a href="~/JobsDefinitions/index" class="btn-default btn-back"><b><i class="fas fa-arrow-circle-left"></i></b> Back to List  </a>
+        </div>
+    </div>
+</div>
+ 

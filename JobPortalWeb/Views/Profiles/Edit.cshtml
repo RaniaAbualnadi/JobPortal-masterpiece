@@ -1,0 +1,103 @@
+﻿@model JobPortalWeb.Data.Profile
+
+@{
+    ViewBag.Title = "Profile Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-container">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-field-container">
+            <label class="control-label">Full Name</label>
+            <div class="control-container">
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            @Html.LabelFor(model => model.Birthdate, htmlAttributes: new { @class = "control-label " })
+            <div class="control-container">
+                @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            @Html.LabelFor(model => model.GenderId, "GenderId", htmlAttributes: new { @class = "control-label " })
+            <div class="control-container">
+                @Html.DropDownList("GenderId", null, htmlAttributes: new { @class = "generic-control" })
+                @Html.ValidationMessageFor(model => model.GenderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            <label class="control-label">Nationality </label>
+            <div class="control-container">
+                @Html.DropDownList("NationalityId", null, htmlAttributes: new { @class = "generic-control" })
+                @Html.ValidationMessageFor(model => model.NationalityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label " })
+            <div class="control-container">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container hidden">
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label " })
+            <div class="control-container">
+                @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            <label class="control-label">Mobile Number</label>
+            <div class="control-container">
+                @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            <label class="control-label">Full Address</label> 
+            <div class="control-container">
+                @Html.EditorFor(model => model.FullAddress, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.FullAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-field-container">
+            <label class="control-label">Cover Letter</label> 
+            <div class="control-container">
+                @Html.EditorFor(model => model.CoverLetter, new { htmlAttributes = new { @class = "generic-control" } })
+                @Html.ValidationMessageFor(model => model.CoverLetter, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <div class=" action-button-container">
+            <button type="submit" class="btn-default btn-save">
+            <b><i class="fas fa-arrow-circle-right"></i></b> Save and Proceed </button>
+            @*<a href="index" class="btn btn-danger btn-labeled btn-labeled-left btn-sm"><b><i class="icon-arrow-left52"></i></b> Back to List  </a>*@
+        </div>
+
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

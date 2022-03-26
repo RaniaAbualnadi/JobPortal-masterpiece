@@ -1,0 +1,66 @@
+﻿@model IEnumerable<JobPortalWeb.Data.JobsDefinition>
+
+@{
+    ViewBag.Title = "Jobs List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="job-cards-container">
+
+
+
+    <div class="form-container">
+
+        @using (Html.BeginForm())
+        {
+            <div class="form-field-container">
+                <label class="control-label">Search Phrase</label>
+                <div class="control-container">
+                    <input type="text" class="generic-control" name="SearchPhrase" id="SearchPhrase" value="@ViewBag.searchPhrase"/>
+                </div>
+
+            </div>
+            <div class=" action-button-container">
+                <button type="submit" class="btn-default btn-view">
+                    <b><i class="fas fa-filter"></i></b> Search
+                </button>
+
+            </div>
+        }
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="inner-job-card">
+            <div class="job-title">
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </div>
+            <div class="card-body">
+                <div class="job-description">
+                    <span style="font-weight:bold">Description:</span>   @Html.DisplayFor(modelItem => item.JobDescription)
+                </div>
+                <div class="Major">
+                    <span style="font-weight:bold"> Major:</span> @Html.DisplayFor(modelItem => item.Major)
+                </div>
+                <div class="min-years">
+                    <span style="font-weight:bold">   Min years of experiance</span> @Html.DisplayFor(modelItem => item.MinYearsOfExperance)
+                </div>
+                <div class="job-req">
+                    <span style="font-weight:bold">Job Requirements:</span>  @Html.DisplayFor(modelItem => item.JobRequirement)
+                </div>
+
+                <div class="  action-button-container">
+                    <a href="~/JobsDefinitions/Details?id=@item.Id" class="btn-default btn-add"><b><i class="fas fa-glasses"></i></b> Details</a>
+                    <a href="~/JobsDefinitions/ApplyToJob?id=@item.Id" class="btn-default btn-save"><b><i class="fas fa-paper-plane"></i></b> Apply To Job</a>
+
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model == null || Model.Count() == 0)
+    {
+        <div class="no-result"> No Result Avaiable</div>
+    }
+
+
+</div>

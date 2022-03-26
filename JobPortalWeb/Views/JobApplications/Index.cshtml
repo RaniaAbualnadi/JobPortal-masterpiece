@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JobPortalWeb.Data.JobApplication>
+
+@{
+    ViewBag.Title = "My Job Applications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobsDefinition.JobTitle)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ApplicationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobsDefinition.JobTitle)
+    </td>
+   
+    <td>
+        <a href="~/JobsDefinitions/Details?id=@item.JobId">
+            <i class="fas fa-glasses"></i>
+        </a>
+        @*&nbsp;|
+        &nbsp;
+        <a href="~/JobApplications/Delete?id=@item.Id">
+            <i class="fas fa-trash"></i>
+        </a>*@
+    </td>
+</tr>
+}
+
+</table>

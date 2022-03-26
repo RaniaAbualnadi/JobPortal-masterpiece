@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+ 
+.login-section {
+    width: 100%;
+    height: 100vh;
+    background-color: #eeeeeea1;
+    background-image: url(../images/backgrounds/bg6.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 80%;
+    height: 80vh;
+    background-color: #c7c7c79e;
+    border-radius: 7px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.login-form {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.login-picture {
+    background-color: #ebeeff;
+    flex-basis: 50%;
+    background-image: url(../images/backgrounds/login-img.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 0.7;
+}
+
+.login-logo {
+    width: 4em;
+    border-radius: 7px;
+}
+
+.login-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+    .login-input input {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 7px;
+        font-size: 1.1em;
+    }
+
+    .login-input i {
+        position: absolute;
+        right: 5px;
+        bottom: 0.7em;
+    }
+
+.login-form-subcontainer {
+    background-color: #ffffffe3;
+    padding: 1em;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.login-btn {
+    background-color: #abb9e0;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.4em;
+    box-shadow: 0px 0px 4px 1px #1f507324;
+    transition: 0.5s ease;
+}
+
+    .login-btn:hover {
+        /* box-shadow: 0px 0px 2px 0px; */
+        cursor: pointer;
+        background-color: #6f8ddd;
+    }
+
+section#loginForm {
+    width: 95%;
+}
+
+.login-form-subcontainer {
+    width: 100%;
+}
+
+@media only screen and (max-width: 770px) {
+    .login-picture {
+        display: none;
+    }
+
+    .login-form {
+        flex-basis: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+}

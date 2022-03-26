@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/css/sidemenu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+
+    <section class="main-section">
+        <div class="main-app-container">
+            <div class="side-menu-container">
+                <div class="side-menu-subcontainer">
+                    <div class="sidemenu-header">
+                        <img src="~/Content/images/jobportallogo.png" class="login-logo" />
+                        @*<img src="Src/Imgs/logo.png" class="menu-logo" alt="">*@
+                    </div>
+                    <div class="submenu-items">
+                        <ul class="sidemenu-list">
+                            <li class="nav-menu-item" data-linkref="Home/index">
+                                <a href="~/Home/Index">
+                                    <span class="icon"><i class="fas fa-home"></i></span>
+                                    <span class="item-title">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-menu-item" data-linkref="JobsDefinitions">
+                                <a href="~/JobsDefinitions/Index">
+                                    <span class="icon"><i class="fas fa-th-list"></i></span>
+                                    <span class="item-title">Job Listing</span>
+                                </a>
+                            </li>
+                            <li class="nav-menu-item" data-linkref="JobApplications">
+                                <a href="~/JobApplications/index">
+                                    <span class="icon"><i class="fab fa-wpforms"></i></span>
+                                    <span class="item-title">My Applications</span>
+                                </a>
+                            </li>
+                            <li class="nav-menu-item" data-linkref="CvJobs">
+                                <a href="~/CvJobs/index">
+                                    <span class="icon"><i class="fas fa-file-invoice"></i></span>
+                                    <span class="item-title">CV Builder</span>
+                                </a>
+                            </li> 
+                            <li class="nav-menu-item" data-linkref="CVViewer">
+                                <a href="~/Profiles/CVViewer">
+                                    <span class="icon"><i class="fas fa-file-contract"></i></span>
+                                    <span class="item-title">CV Viewer</span>
+                                </a>
+                            </li>
+                            <li class="nav-menu-item" data-linkref="Profiles/Edit">
+                                <a href="~/Profiles/Edit">
+                                    <span class="icon"><i class="far fa-id-card"></i></span>
+                                    <span class="item-title">My Profile</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content-container">
+                <div class="application-header">
+                    <span> @ViewBag.Title</span>
+                    <div class="login-profile-info">
+                        @*<img src="" alt="">*@
+                        <div class="welcome-container"><span> @Html.Partial("_LoginPartial")</span> </div>
+                    </div>
+                </div>
+                <div class="applicaion-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        document.querySelectorAll(".nav-menu-item").forEach(function (item) {
+            item.addEventListener("click", function () {
+                document.querySelectorAll(".nav-menu-item").forEach(function (innerItem) {
+
+                    //innerItem.classList.remove("active");
+                });
+                //this.classList.add("active");
+            });
+        });
+        selectLink();
+
+        function selectLink() {
+            const collection = document.querySelectorAll(".nav-menu-item");
+
+            collection.forEach(element => {
+                let subUrl = element.dataset.linkref;
+                if (window.location.href.indexOf(subUrl) > 0) {
+                    element.classList.add("active");
+                }
+               
+            });
+        }
+         
+        
+    </script>
+</body>
+@Html.Partial("_PartialFooter")
+</html>

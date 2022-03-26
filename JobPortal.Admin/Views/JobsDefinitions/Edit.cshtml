@@ -1,0 +1,151 @@
+﻿@model JobPortal.Admin.Data.JobsDefinition
+
+@{
+    ViewBag.Title = "Edit Job Definition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <div class="page-subtitle"> Job Definition</div>
+    <br />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+            Job Title
+        </label>
+    </div>
+    
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+            Job Description
+        </label>
+    </div>
+
+    <div class="col-md-9">
+        @Html.TextAreaFor(model => model.JobDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.JobDescription, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+           Start Publish Date
+        </label>
+    </div>
+   
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.StartPublishDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.StartPublishDate, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+           End Publish Date
+        </label>
+    </div>
+  
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.EndPublishDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EndPublishDate, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+            Min Degree Id
+        </label>
+    </div>
+    
+    <div class="col-md-9">
+        @Html.DropDownList("MinDegreeId", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.MinDegreeId, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+         Major
+        </label>
+    </div>
+   
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Major, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+           Min Years Of Experance
+        </label>
+    </div>
+
+    <div class="col-md-9">
+        @Html.EditorFor(model => model.MinYearsOfExperance, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MinYearsOfExperance, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+        Job Requirement
+        </label>
+    </div>
+   
+    <div class="col-md-9">
+        @Html.TextAreaFor(model => model.JobRequirement, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.JobRequirement, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="row">
+    <div class="control-label col-md-2">
+        <label class="control-label ">
+          Is Active
+        </label>
+    </div>
+  
+    <div class="col-md-9">
+        <div class="checkbox">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+    <hr />
+    <div class="form-group">
+        <div class=" col-md-12 action-button-container">
+            <button type="submit" class="btn btn-success btn-labeled btn-labeled-left btn-sm"><b><i class="icon-plus2"></i></b> Save</button>
+            <a href="index" class="btn btn-danger btn-labeled btn-labeled-left btn-sm"><b><i class="icon-arrow-left52"></i></b> Back to List  </a>
+        </div>
+    </div>
+</div>
+}
+ 
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
